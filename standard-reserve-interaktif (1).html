@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Standard Reserve — özet akış</title>
+<style>
+  body {
+    margin: 0;
+    padding: 32px 16px;
+    background: #F1EFE8;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: #2C2C2A;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .wrap { max-width: 720px; width: 100%; }
+  h1 { font-size: 20px; font-weight: 500; margin: 0 0 4px; }
+  p.sub { color: #5F5E5A; font-size: 14px; margin: 0 0 24px; }
+  svg { width: 100%; height: auto; display: block; background: #FFFFFF; border-radius: 12px; }
+  .node { cursor: pointer; transition: opacity 0.15s; }
+  .node:hover { opacity: 0.85; }
+  .node.active rect { stroke-width: 2.5; }
+  #panel {
+    margin-top: 20px;
+    background: #FFFFFF;
+    border: 1px solid #D3D1C7;
+    border-radius: 12px;
+    padding: 20px 24px;
+    min-height: 70px;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  #panel .title { font-weight: 500; font-size: 15px; margin-bottom: 6px; }
+  #panel .placeholder { color: #888780; }
+  .legend { margin-top: 14px; font-size: 12px; color: #5F5E5A; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>The Standard Reserve — özet akış</h1>
+  <p class="sub">Bir kutuya tıkla, altında açıklaması çıksın.</p>
+
+  <svg viewBox="0 0 680 320" xmlns="http://www.w3.org/2000/svg" role="img">
+    <defs>
+      <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+        <path d="M2 1L8 5L2 9" fill="none" stroke="#3C3489" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </marker>
+    </defs>
+
+    <g class="node" data-id="charter">
+      <rect x="50" y="60" width="180" height="56" rx="8" fill="#EEEDFE" stroke="#534AB7" stroke-width="0.5"/>
+      <text x="140" y="78" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="500" fill="#26215C">Charter al</text>
+      <text x="140" y="96" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#3C3489">Genesis: ücretsiz</text>
+    </g>
+
+    <g class="node" data-id="branch">
+      <rect x="250" y="60" width="180" height="56" rx="8" fill="#EEEDFE" stroke="#534AB7" stroke-width="0.5"/>
+      <text x="340" y="78" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="500" fill="#26215C">Şube aç</text>
+      <text x="340" y="96" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#3C3489">Otomatik, ödül biriktir</text>
+    </g>
+
+    <g class="node" data-id="expand">
+      <rect x="450" y="60" width="180" height="56" rx="8" fill="#EEEDFE" stroke="#534AB7" stroke-width="0.5"/>
+      <text x="540" y="78" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="500" fill="#26215C">Genişlet</text>
+      <text x="540" y="96" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#3C3489">Müzayede, token yak</text>
+    </g>
+
+    <line x1="230" y1="88" x2="250" y2="88" stroke="#3C3489" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <line x1="430" y1="88" x2="450" y2="88" stroke="#3C3489" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <line x1="540" y1="116" x2="540" y2="206" stroke="#3C3489" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+    <g class="node" data-id="ethsignal">
+      <rect x="450" y="206" width="180" height="56" rx="8" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/>
+      <text x="540" y="224" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="500" fill="#04342C">Net ETH sinyali</text>
+      <text x="540" y="242" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#085041">İhraç hızını ayarlar</text>
+    </g>
+
+    <g class="node" data-id="close">
+      <rect x="250" y="206" width="180" height="56" rx="8" fill="#EEEDFE" stroke="#534AB7" stroke-width="0.5"/>
+      <text x="340" y="224" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="500" fill="#26215C">Şubeyi kapat</text>
+      <text x="340" y="242" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#3C3489">Çıkış ücreti kesilir</text>
+    </g>
+
+    <g class="node" data-id="burn">
+      <rect x="50" y="206" width="180" height="56" rx="8" fill="#EEEDFE" stroke="#534AB7" stroke-width="0.5"/>
+      <text x="140" y="224" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="500" fill="#26215C">Charter yanar</text>
+      <text x="140" y="242" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#3C3489">Son şube kapanınca</text>
+    </g>
+
+    <line x1="450" y1="234" x2="430" y2="234" stroke="#0F6E56" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <line x1="250" y1="234" x2="230" y2="234" stroke="#3C3489" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+    <path d="M48,262 C10,262 10,88 48,88" fill="none" stroke="#5F5E5A" stroke-width="1" stroke-dasharray="4 3" marker-end="url(#arrow)"/>
+  </svg>
+
+  <div class="legend">Mor: charter yaşam döngüsü · Teal: tokenomics motoru · kesikli ok: yeni müzayedeyle baştan başlar</div>
+
+  <div id="panel">
+    <div class="placeholder">Bir kutuya tıklayınca açıklaması burada görünecek.</div>
+  </div>
+</div>
+
+<script>
+  const explanations = {
+    charter: {
+      title: "Charter al",
+      text: "Charter, bir banka lisansı gibi düşünülebilir. Genesis aşamasında sadece 1.000 tane var ve hepsi ücretsiz, soulbound (devredilemez) bir NFT olarak dağıtılıyor. Genesis dışında yeni bir Charter almak isteyenler için ayrı bir günlük ETH müzayedesi işliyor."
+    },
+    branch: {
+      title: "Şube aç",
+      text: "Her Charter otomatik olarak seni bir Branch sahibi yapıyor. Bu şube, protokolün o epoch'ta ürettiği $STANDARD'dan payına düşeni biriktiriyor. Kazanç anında cüzdana düşmüyor, Charter'ın iç bakiyesinde tutuluyor."
+    },
+    expand: {
+      title: "Genişlet",
+      text: "Bir Charter'la en fazla 10 şubeye kadar büyüyebilirsin. Her yeni şube bir genişleme lisansı gerektiriyor — bunlar $STANDARD ile günlük Hollanda tipi müzayedede satılıyor ve harcanan token tamamen yakılıyor."
+    },
+    ethsignal: {
+      title: "Net ETH sinyali",
+      text: "Sistemin tek politika girdisi: resmi ETH/$STANDARD Uniswap v4 havuzuna giren-çıkan net ETH akışı. Bu sinyal üç farklı hızda üç kararı besliyor: ücret yönü (anlık), ihraç oranı (2 epoch gecikmeli), çıkış ücreti (7 günlük pencere)."
+    },
+    close: {
+      title: "Şubeyi kapat",
+      text: "Kazancını nakde çevirmek istediğinde şubeni kapatıyorsun (retire). Payın cüzdanına düşüyor ama bir çıkış ücreti kesiliyor — yarısı yakılıyor, yarısı sistemde kalan bankerlara dağıtılıyor."
+    },
+    burn: {
+      title: "Charter yanar",
+      text: "Son şubeni de kapatırsan Charter'ın kendisi yanıyor. Geri dönmek istersen, genesis'teki gibi ücretsiz değil — yeni bir Charter için günlük ETH müzayedesine girmen gerekiyor."
+    }
+  };
+
+  const nodes = document.querySelectorAll(".node");
+  const panel = document.getElementById("panel");
+
+  nodes.forEach(node => {
+    node.addEventListener("click", () => {
+      nodes.forEach(n => n.classList.remove("active"));
+      node.classList.add("active");
+      const id = node.getAttribute("data-id");
+      const info = explanations[id];
+      if (info) {
+        panel.innerHTML = '<div class="title">' + info.title + '</div><div>' + info.text + '</div>';
+      }
+    });
+  });
+</script>
+</body>
+</html>
