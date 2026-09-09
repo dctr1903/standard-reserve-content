@@ -1,7 +1,8 @@
 # standard-reserve-content
 
-The Standard Reserve protokolü hakkında hazırlanan içerik serisi ve infografikler.
+Content series and infographics created about The Standard Reserve protocol.
 
-- `standard-reserve-ozet-infografik.svg` — statik özet diyagram
-- `standard-reserve-interaktif.html` — tıklanabilir versiyon (Türkçe)
-- `standard-reserve-interactive.html` — tıklanabilir versiyon (İngilizce)
+- `standard-reserve-content-series.md` — 4-part Twitter/X thread package
+- `standard-reserve-summary-infographic.svg` — static summary diagram
+- `standard-reserve-interactive.html` — clickable version (English)
+- `standard-reserve-interaktif.html` — clickable version (Turkish)
